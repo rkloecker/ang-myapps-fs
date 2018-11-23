@@ -1,10 +1,10 @@
-### Angular7-Firestore-CRUD-Myapps
+# Angular7-Firestore-CRUD-Myapps
 
 ## CRUD application for listing my deployed apps
 
-# Angular 7, Firestore, Font Awesome, Materialize CSS
+### Angular 7, Firestore, Font Awesome, Materialize CSS
 
-# [Live Demo with surge](http://ang-myapps-fs.surge.sh)
+### [Live Demo with surge](http://ang-myapps-fs.surge.sh)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.1.
