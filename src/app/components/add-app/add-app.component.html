@@ -1,0 +1,35 @@
+
+  <a *ngIf="!showForm" (click)="showTheForm()" class="addBtn waves-effect waves-light btn">Add App</a>
+  <!-- Page Content goes here -->
+
+
+<div *ngIf="showForm" class="card">
+  <div class="card-content">
+    <span class="card-title">Add app</span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" placeholder="Add Title" [(ngModel)]="app.title" name="title">
+          <label class="active">Title</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" placeholder="Add long Description" [(ngModel)]="app.description_long" name="description">
+          <label class="active">Long Description</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" placeholder="Add short Description" [(ngModel)]="app.description_short" name="description">
+          <label class="active">Short Description</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" placeholder="Add url" [(ngModel)]="app.url" name="url">
+          <label class="active">URL</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" placeholder="Add repo url" [(ngModel)]="app.repo_url" name="repo_url">
+          <label class="active">Repo URL</label>
+        </div>
+        <input type="submit" value="Submit" class="btn">
+      </div>
+    </form>
+  </div>
+</div>

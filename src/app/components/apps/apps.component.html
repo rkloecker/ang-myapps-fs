@@ -1,0 +1,39 @@
+<div *ngIf="apps?.length > 0;else noapps">
+  <ul *ngFor="let app of apps" class="collection">
+    <li class="collection-item"><strong>{{app.title}}: </strong> {{app.description_long}} <a href="#" class="secondary-content">
+      <i (click)="editapp($event, app)" class="fa fa-pencil mr" title="Edit App"></i>  
+      <i (click)="deleteapp($event, app)"  class="fa fa-trash" title="Delete App"></i>  
+      <i *ngIf="editState && appToEdit.id == app.id" (click)="clearState()" class="fa fa-compress ml"></i>  
+    </a>
+    
+    <div *ngIf="editState && appToEdit.id == app.id">
+      <form (ngSubmit)="updateapp(app)">
+          <div class="row">
+              <div class="input-field col s12">
+                <input type="text" placeholder="Add Title" [(ngModel)]="app.title" name="title">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" placeholder="Add Long Description" [(ngModel)]="app.description_long" name="description_long">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" placeholder="Add Short Description" [(ngModel)]="app.description_short" name="description_short">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" placeholder="Add URL" [(ngModel)]="app.url" name="url">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" placeholder="Add Repo URL" [(ngModel)]="app.repo_url" name="repo_url">
+              </div>
+              <input type="submit" value="Update app" class="btn orange">
+            </div>
+      </form>
+    </div>
+
+    </li>
+  </ul>
+</div>
+
+<ng-template #noapps>
+  <hr>
+  <h5>There are no apps to list</h5>
+</ng-template>
