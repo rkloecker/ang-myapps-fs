@@ -1,13 +1,14 @@
 .footer-text {
   color: white;
 }
-p{
+footer > p{
   padding: 20px 0;
+  margin: 0 0;
   font-size: 1.2rem;
 }
 
 footer {
-  height: 100%;
+ 
   display: flex;
   justify-content: center;
   align-items: center;

@@ -17,6 +17,7 @@ export class AppsComponent implements OnInit {
   ngOnInit() {
     this.appService.getapps().subscribe(apps => {
       console.log(apps);
+      // this.apps = apps.slice(0,6); // slice to 6 for testing styling footer!
       this.apps = apps;
     });
   }
