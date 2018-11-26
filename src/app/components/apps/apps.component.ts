@@ -18,10 +18,12 @@ export class AppsComponent implements OnInit {
   ngOnInit() {
     this.appService.getapps().subscribe(apps => {
       console.log(apps);
-      setTimeout(()=> {
-        this.apps = apps;
-        this.loading = false;
-      },7000);
+      this.loading = false;
+      this.apps = apps;
+      // setTimeout(()=> {
+      //   this.apps = apps;
+      //   this.loading = false;
+      // },7000); // testing loading spinner
       // this.apps = apps.slice(0,6); // slice to 6 for testing styling footer!
       // this.apps = []; // empty for testing!
      
