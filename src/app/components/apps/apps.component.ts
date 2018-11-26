@@ -10,6 +10,7 @@ import { App } from '../../models/Apps';
 export class AppsComponent implements OnInit {
   apps: App[];
   editState: boolean = false;
+  loading: boolean = true;
   appToEdit: App;
 
   constructor(private appService: AppService) { }
@@ -17,8 +18,13 @@ export class AppsComponent implements OnInit {
   ngOnInit() {
     this.appService.getapps().subscribe(apps => {
       console.log(apps);
+      setTimeout(()=> {
+        this.apps = apps;
+        this.loading = false;
+      },7000);
       // this.apps = apps.slice(0,6); // slice to 6 for testing styling footer!
-      this.apps = apps;
+      // this.apps = []; // empty for testing!
+     
     });
   }
 

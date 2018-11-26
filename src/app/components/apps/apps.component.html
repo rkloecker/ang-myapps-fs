@@ -1,3 +1,7 @@
+<div *ngIf="loading">
+  <p>loading</p>
+ <div class="loader mt"></div>
+</div>
 <div *ngIf="apps?.length > 0;else noapps">
   <ul *ngFor="let app of apps" class="collection">
     <li class="collection-item"><strong>{{app.title}}: </strong> {{app.description_long}} <a href="#" class="secondary-content">
@@ -34,6 +38,9 @@
 </div>
 
 <ng-template #noapps>
-  <hr>
-  <h5>There are no apps to list</h5>
+    <div *ngIf="!loading">
+        <hr>
+        <h5>There are no apps to list</h5>
+       </div>
+  
 </ng-template>
