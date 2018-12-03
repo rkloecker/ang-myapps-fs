@@ -14,6 +14,19 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddappComponent } from './components/add-app/add-app.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { RouterModule, Routes } from '@angular/router';
+
+// const appRoutes: Routes = [
+//   { path: 'home', component: AppsComponent },
+//   { path: 'add',
+//    component: AddappComponent },
+//    { path: '',
+//    redirectTo: '/',
+//    pathMatch: 'full'
+//  },
+//  { path: '', component: AppsComponent }
+//   ]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +36,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent
   ],
   imports: [
+    // RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'angularfs'),
